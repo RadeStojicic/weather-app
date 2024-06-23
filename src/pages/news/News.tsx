@@ -10,7 +10,6 @@ type NewsState = Blog[] | null;
 
 const News = () => {
   const [news, setNews] = useState<NewsState>(null);
-
   useEffect(() => {
     const fetchNews = async () => {
       const newsData: Blog[] = await getPosts(
