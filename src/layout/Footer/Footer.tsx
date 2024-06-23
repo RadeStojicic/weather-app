@@ -1,3 +1,4 @@
+import Logo from "@/components/ui/logo";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -13,11 +14,7 @@ const Footer = () => {
         <div className="flex w-full flex-col justify-between gap-12 md:flex-row">
           <div className="flex flex-col gap-6">
             <Link to="/">
-              <img
-                className="w-32"
-                src="/logo/weather-logo-white.svg"
-                alt="Logo"
-              />
+              <Logo className="w-32 text-white" />
             </Link>
             <p className="text-accent dark:text-foreground/50">
               Stay ahead of the storm with personalized weather alerts.

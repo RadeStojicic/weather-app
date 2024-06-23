@@ -1,6 +1,6 @@
 import { ThemeToggler } from "@/components/ThemeToggler/Toggler";
-import { useTheme } from "@/components/ThemeToggler/theme-provider";
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/ui/logo";
 import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -14,7 +14,6 @@ const Navbar = () => {
     { href: "/contact", name: "Contact" },
     { href: "/log-in", name: "Log in" },
   ];
-  const theme = useTheme().theme;
   return (
     <nav className="fixed top-0 z-[1] mx-auto flex h-20 w-full items-center justify-between border-b border-foreground/10 bg-background/70 backdrop-blur-lg">
       <div className="container mx-auto flex w-full justify-between">
@@ -23,14 +22,7 @@ const Navbar = () => {
           className="flex items-center"
           to="/"
         >
-          <img
-            src={
-              theme === "dark"
-                ? "/logo/weather-logo-white.svg"
-                : "/logo/weather-logo-black.svg"
-            }
-            alt="Logo"
-          />
+          <Logo className="text-foreground dark:text-white" />
         </Link>
         <ul className="hidden items-center justify-end gap-8 md:flex">
           {links.map(({ href, name }) =>
