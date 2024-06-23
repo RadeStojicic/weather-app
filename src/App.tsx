@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeToggler/theme-provider";
+import ScrollToTop from "./components/scroll-to-top";
 import { ForecastProvider } from "./hooks/useForecast";
 import Layout from "./layout/Layout";
 import LogIn from "./pages/auth/LogIn";
@@ -15,6 +16,7 @@ function App() {
     <ForecastProvider>
       <Router>
         <ThemeProvider defaultTheme="system" storageKey="theme">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
