@@ -7,7 +7,6 @@ import * as React from "react";
 
 import { ButtonProps, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
@@ -50,8 +49,8 @@ const PaginationLink = ({
   size = "icon",
   ...props
 }: PaginationLinkProps) => (
-  <Link
-    to={props.href ?? "#"}
+  <a
+    href={props.href ?? "#"}
     aria-current={isActive ? "page" : undefined}
     className={cn(
       buttonVariants({
