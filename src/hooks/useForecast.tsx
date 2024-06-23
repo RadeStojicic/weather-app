@@ -90,8 +90,7 @@ const useForecast = () => {
             });
           }
         })
-        .catch((error) => {
-          console.error(error);
+        .catch(() => {
           if (signal.aborted) {
             console.log("Request was aborted");
             return;
