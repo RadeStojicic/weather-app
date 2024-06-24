@@ -29,7 +29,7 @@ const LogIn = () => {
 
   return (
     <div className="container mx-auto mb-20 mt-40 flex items-center justify-center">
-      <div className="flex flex-col rounded-lg border px-8 py-12">
+      <div className="flex flex-col rounded-lg sm:border sm:px-8 sm:py-12">
         <h1 className="text-3xl font-semibold">Log In</h1>
         <p className="mt-2 text-base text-foreground/70">
           Stay ahead of the storm with personalized weather alerts.
