@@ -91,7 +91,7 @@ const useForecast = () => {
           }
         })
         .catch((error) => {
-          if (error.response && error.response.status === 404) {
+          if (error.response) {
             console.clear();
           }
           if (signal.aborted) {

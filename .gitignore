@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# api keys
+.env
+
 # velite 
 /.velite
