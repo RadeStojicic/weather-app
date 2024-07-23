@@ -24,6 +24,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "test/formatters.test.ts"],
+  "include": ["src", "web/test/formatters.test.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
