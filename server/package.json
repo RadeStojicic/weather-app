@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "concurrently": "^8.2.2",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "vercel": "^35.1.0"
   }
 }
