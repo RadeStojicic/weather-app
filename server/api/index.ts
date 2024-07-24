@@ -2,6 +2,7 @@ import axios from "axios";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import rateLimit from "express-rate-limit";
 import errorHandler from "./middleware/error";
 
 const PORT = process.env.PORT || 3000;
@@ -9,6 +10,13 @@ const app = express();
 dotenv.config();
 
 app.use(cors());
+
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 10 minutes
+  max: 1,
+});
+
+app.use(limiter);
 
 app.get("/weather", async (req, res, next) => {
   const location = req.query.location as string;
