@@ -1,7 +1,10 @@
+import axios from "axios";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import errorHandler from "./middleware/error";
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 dotenv.config();
 
@@ -13,7 +16,7 @@ app.use(
   })
 );
 
-app.get("/weather", async (req, res) => {
+app.get("/weather", async (req, res, next) => {
   const location = req.query.location as string;
 
   if (!location) {
@@ -21,21 +24,18 @@ app.get("/weather", async (req, res) => {
   }
 
   try {
-    const response = await fetch(
+    const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${process.env.WEATHER_API}`
     );
-    if (!response.ok) {
-      return res
-        .status(response.status)
-        .send({ error: "Failed to fetch data from API" });
-    }
-    const data = await response.json();
+    const data = response.data;
     res.send(data);
   } catch (error) {
-    res.status(500).send({ error: "Internal Server Error" });
+    next(error);
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.use(errorHandler);
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
