@@ -8,13 +8,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 dotenv.config();
 
-app.use(
-  cors({
-    origin: "https://rade-weather.vercel.app/",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.get("/weather", async (req, res, next) => {
   const location = req.query.location as string;
