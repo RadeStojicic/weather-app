@@ -50,12 +50,7 @@ const useForecast = () => {
     const fetchFullForecast = async () => {
       setIsLoading(true);
       axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${import.meta.env.VITE_WEATHER_API}`,
-          {
-            signal,
-          },
-        )
+        .get(`http://localhost:3000/weather?location=${location}`, { signal })
         .then((res) => {
           const data = res.data;
           const fiveDaysForecast: DataForecast[] = [];
