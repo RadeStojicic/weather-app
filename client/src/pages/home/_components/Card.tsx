@@ -11,7 +11,7 @@ const Card = ({ day, index }: { day: DataForecast; index: number }) => {
         className="mt-1"
         width={50}
         height={50}
-        src={`http://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
+        src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
         alt="Weather icon"
       />
 
