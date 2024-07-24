@@ -50,7 +50,12 @@ const useForecast = () => {
     const fetchFullForecast = async () => {
       setIsLoading(true);
       axios
-        .get(`http://localhost:3000/weather?location=${location}`, { signal })
+        .get(
+          `https://rade-weather-api.vercel.app/weather?location=${location}`,
+          {
+            signal,
+          },
+        )
         .then((res) => {
           const data = res.data;
           const fiveDaysForecast: DataForecast[] = [];
