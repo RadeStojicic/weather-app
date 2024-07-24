@@ -1,39 +1,11 @@
-# Vremenska prognoza
+# Weather Forecast
 
-Vremenska prognoza je moderna web aplikacija koja korisnicima pruža precizne i ažurirane informacije o vremenskim uslovima.
+Weather Forecast is a modern web application that provides users with accurate and up-to-date weather information.
 
-Aplikacija omogućava korisnicima da brzo i lako dobiju detaljne prognoze, uključujući temperature, vlažnost, pritisak, i druge relevantne meteorološke podatke, kao i prognozu za narednih 5 dana.
+The application allows users to quickly and easily get detailed forecasts, including temperature, humidity, pressure, and other relevant meteorological data, as well as a 5-day forecast.
 
-Pored vremenskih prognoza, aplikacija sadrži i stranicu sa najnovijim vestima iz sveta meteorologije, omogućavajući korisnicima da ostanu informisani o najnovijim događajima i istraživanjima. Svaka vest ima svoju detaljnu stranicu gde korisnici mogu pročitati više o izabranim temama.
+In addition to weather forecasts, the application includes a page with the latest news from the world of meteorology, allowing users to stay informed about the latest events and research. Each news item has its own detailed page where users can read more about selected topics.
 
-Korisnici takođe imaju mogućnost da personalizuju izgled aplikacije biranjem između svetle i tamne teme, pružajući tako bolje korisničko iskustvo.
+Users also have the option to personalize the appearance of the application by choosing between light and dark themes, providing a better user experience.
 
-Aplikacija nudi i stranice za prijavu (login), registraciju (signup) i kontakt.
-
-Za izradu ove aplikacije korišćen je [OpenWeatherMap](https://openweathermap.org) API.
-
-## Pokretanje projekta na lokalnoj mašini
-
-1. Pokrenuti komandu za kloniranje:
-
-```bash
-git clone https://github.com/elab-development/klijentske-veb-tehnologije-2024-2022-0251-vremenska-prognoza.git .
-```
-
-2. Nakon toga, instalirati dependencies uz pomoc vašeg omiljenog package managera (pnpm):
-
-```bash
-pnpm i
-```
-
-3. Onda, napraviti `.env.local` fajl i u njega upisati API key u sledećem formatu:
-
-```bash
-VITE_WEATHER_API=openweathermap_api_key
-```
-
-4. I pokrenite dev server:
-
-```bash
-pnpm dev
-```
+The [OpenWeatherMap](https://openweathermap.org) API was used to create this application.
